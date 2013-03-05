@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+	<category>
+		<setting id="loop" type="enum" label="Loop" values="Off|All|One"/>
+		<setting id="downvolume" label="Lower Volume" type="slider" default="0" range="0,1,60" format="%1.f db" />
+		<setting id="fade" type="bool" label="Fade" default="False"/>
+		
+		<setting type="sep"/>
+		<setting id="activate_on_pause" type="bool" label="Reactivate when pausing playback" default="False"/>
+		<setting id="activate_on_stop" type="bool" label="Reactivate when stopping playback" default="False"/>
+		
+		<setting type="sep"/>
+		<setting id="music_source" type="enum" label="Music Source" values="Library|Folder|File"/>
+		<setting id="folder" type="folder" label="Folder" source="auto" option="writeable" enable="eq(-1,1)"/>
+		<setting id="file" type="audio" label="File" value="path_to_files" enable="eq(-2,2)"/>
+		
+		<setting type="sep"/>
+		<setting type="action" label="Manually Activate" action="RunScript($CWD/main.py)"/>
+	</category>
+</settings>
